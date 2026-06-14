@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Caslon+Text:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Caslon Text", Georgia, serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #101415;
+  color: #e0e3e5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom indicator lines and editorial decorations */
+.proof-indent {
+  margin-left: 1rem;
+  border-left: 2px solid #45464d;
+  padding-left: 1.5rem;
+}
+
+/* Fluid spacing and page guidelines */
+.text-justified {
+  text-align: justify;
+  text-justify: inter-word;
+}

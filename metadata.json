@@ -1,0 +1,6 @@
+{
+  "name": "CANTOR_SAFE",
+  "description": "AI Safety Alignment: The Cantor Hypothesis and Neural ODE simulation. Highly polished interactive math research analyzer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
