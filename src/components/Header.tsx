@@ -5,9 +5,10 @@ interface HeaderProps {
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
   onOpenSettings: () => void;
+  isMobileMode?: boolean;
 }
 
-export default function Header({ activeTab, setActiveTab, onOpenSettings }: HeaderProps) {
+export default function Header({ activeTab, setActiveTab, onOpenSettings, isMobileMode }: HeaderProps) {
   const tabs: { id: TabId; label: string }[] = [
     { id: 'INTRO', label: 'INTRO' },
     { id: 'MATH', label: 'MATH' },
@@ -28,7 +29,7 @@ export default function Header({ activeTab, setActiveTab, onOpenSettings }: Head
       </div>
       
       <div className="flex items-center gap-6">
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className={`${isMobileMode ? 'hidden' : 'hidden md:flex'} gap-8 items-center`}>
           {tabs.map((tab) => (
             <button
               key={tab.id}

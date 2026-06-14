@@ -4,9 +4,10 @@ import { TabId } from '../types';
 interface FooterProps {
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
+  isMobileMode?: boolean;
 }
 
-export default function Footer({ activeTab, setActiveTab }: FooterProps) {
+export default function Footer({ activeTab, setActiveTab, isMobileMode }: FooterProps) {
   const navItems = [
     { id: 'INTRO' as TabId, label: 'Intro', icon: BookOpen },
     { id: 'MATH' as TabId, label: 'Math', icon: Sigma },
@@ -15,7 +16,7 @@ export default function Footer({ activeTab, setActiveTab }: FooterProps) {
   ];
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-[#1d2022] border-t border-[#45464d] px-4 pb-5 pt-2 flex justify-around items-center z-50 md:hidden shadow-lg">
+    <footer className={`${isMobileMode ? 'absolute bottom-0 left-0 border-t' : 'fixed bottom-0 left-0 md:hidden'} w-full bg-[#1d2022] border-[#45464d] px-4 pb-5 pt-2 flex justify-around items-center z-50 shadow-lg`}>
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeTab === item.id;
